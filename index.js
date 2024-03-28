@@ -25,7 +25,10 @@ mongoose.connect(process.env.MONGODB_URL).then(
         err => console.log('DB error', err));
 
 
-
+app.listen(process.env.PORT || PORT, (err) => {
+    if (err) { return console.log(err); }
+    console.log('Server OK')
+});
 
 
 app.get('/', (req, res) => {
@@ -41,10 +44,3 @@ app.patch('/todo/:id', TaskController.updateTodo);
 app.patch('/todo/checked/:id', TaskController.checked);
 app.patch('/todo/remove_task/:id', TaskController.removeTask);
 app.delete('/todo/:id', TaskController.remove);
-
-
-
-// app.listen(PORT, (err) => {
-//     if (err) { return console.log(err); }
-//     console.log('Server OK')
-// });
