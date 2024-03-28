@@ -25,10 +25,7 @@ mongoose.connect(process.env.MONGODB_URL).then(
         err => console.log('DB error', err));
 
 
-app.listen(process.env.PORT || PORT, (err) => {
-    if (err) { return console.log(err); }
-    console.log('Server OK')
-});
+
 
 
 app.get('/', (req, res) => {
@@ -47,3 +44,7 @@ app.delete('/todo/:id', TaskController.remove);
 
 
 
+app.listen(PORT, (err) => {
+    if (err) { return console.log(err); }
+    console.log('Server OK')
+});
