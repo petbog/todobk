@@ -14,7 +14,7 @@ app.use(cors());
 config();
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://todobk-beta.vercel.app');
+    res.setHeader('Access-Control-Allow-Origin', 'https://todo-list-khaki-omega.vercel.app');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
